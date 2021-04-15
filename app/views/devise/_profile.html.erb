@@ -1,0 +1,23 @@
+<div class="home-page-profile container">
+    <div class=user-info>
+        <div class="profile-image">
+            <img src="" alt="" srcset="">
+        </div>
+        <p class="username"><%= current_user.email%></p>
+    </div>
+    <div class="user-stats">
+        <p>Posts</p>
+        <p>10</p>
+    </div>
+    <div class="btn-container">
+        <div class="edit-profile">
+           <i class="fa fa-user"></i>
+            <button>Profile</button>
+        </div>
+        <%= link_to new_post_path do %>
+             <button class="btn-post">Create Post</button>
+        <% end %>
+       
+    </div>
+
+</div>

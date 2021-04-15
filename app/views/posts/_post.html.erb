@@ -1,0 +1,29 @@
+<div class="post container">
+    <div>
+        <div class ="profile-image">
+            <img src="" alt="">
+        </div>
+    </div>
+    <div>
+        <div class="post-details">
+            <p class="username"><%= User.find(post.user_id).email%></p> 
+            <p><%= post.created_at %></p>
+        </div>
+        <div class="post-content">
+            <p><%= post.post%></p>
+        </div>
+        <div class="post-engagements">
+            <div class="engagement">
+                <%= link_to '#', remote: true do %>
+                    <i class="fa fa-comments" aria-hidden="true"></i>
+                <% end %>
+                
+                <p>1</p>
+            </div>
+            <div class="engagement">
+                <i class="fa fa-thumbs-up"></i>
+                <p>1</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+.home-page-profile {
+    width: 300px;
+    background-color: antiquewhite;
+}
+
+.user-info {
+    display: flex;
+    margin-bottom: 1.6rem;
+    .username {
+        align-self: center;
+    }
+}
+
+
+.user-stats {
+    display: flex;
+    margin-bottom: 1.5rem;
+    p {
+        margin-right: 1rem;
+    }
+}
+
+.btn-container {
+    
+    button {
+        display: block;
+        margin-bottom: 1.6rem;
+    }
+    .edit-profile {
+        display: flex;
+        .fa {
+            font-size: 1.4rem;
+        }
+        button {
+            margin-left: 1rem;
+            border: none;
+            font-size: 1.1rem;
+            background: none;
+        }
+
+    }
+    .btn-post {
+        padding: 0.7em 0;
+        width: 70%;
+        border: none;
+        border-radius: 25px;
+        color: white;
+        background-color: aquamarine;
+    }
+}
