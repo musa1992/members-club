@@ -1,3 +1,63 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.make-comment {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.comment-modal {
+    margin-top: 3rem;
+    width: 40%;
+    height: 55%;
+    border-radius: 15px;
+    background-color: #fff;
+    .close-modal {
+        padding-bottom: 1rem;
+        border-bottom: 0.5px solid lightgrey;
+        p {
+            font-size: 1.2rem;
+
+        }
+        .close-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            &:hover{
+                color: wheat;
+                background-color: bisque;
+            }
+        }
+       
+    }
+
+    .comment-form {
+        textarea {
+            width: 85%;
+            padding: 1em;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .post-creator {
+        display: flex;
+    }
+
+    .commenter {
+        display: flex;
+    }
+    .actions {
+        float: right;
+    }
+}

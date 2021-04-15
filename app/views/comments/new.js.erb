@@ -1,0 +1,11 @@
+comment = document.querySelector('#comment-modal');
+while (comment.firstChild) {
+    comment.removeChild(comment.lastChild);
+}
+comment.insertAdjacentHTML("beforeend", "<%= j (render "form")%>")
+comment.style.display = "block"
+closeBtn = document.getElementById('close-comment-modal');
+
+closeBtn.onclick = function () {
+    comment.style.display = "none"
+}

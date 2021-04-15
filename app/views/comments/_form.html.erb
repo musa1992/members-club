@@ -1,32 +1,53 @@
-<%= form_with(model: [@post, comment], local: true) do |form| %>
-  <% if comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-      <ul>
-      <% comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="make-comment">
+  
+  <div class="comment-modal">
+    <div class="container close-modal">
+      <div id="close-comment-modal" class="close-btn"><p>X</p></div>
     </div>
-  <% end %>
+    <div class="post-creator container">
+      <div>
+        <div class ="profile-image">
+            <img src="" alt="">
+        </div>
+      </div>
+      <div>
+        <div class="post-details">
+            <p class="username"><%= User.find(@post.user_id).email%></p>
+            <p><%= @post.created_at %></p>
+        </div>
+        <div class="post-content">
+            <p><%= @post.post%></p>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
+    <div class="container comment-form">
+      <%= form_with(model: [@post, @comment], local: true) do |form| %>
+        <% if @comment.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      
+            <ul>
+            <% @comment.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="commenter">
+          <div class ="profile-image">
+            <img src="" alt="">
+        </div>
+          <%= form.text_area :comment, placeholder: "Write your comment"%>
+        </div>
+        <div>
+          <%= form.hidden_field :user_id, value: current_user.id%>
+        </div>
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :post_id %>
-    <%= form.text_field :post_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
