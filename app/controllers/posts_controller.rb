@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy]
-
-
   
   # GET /posts or /posts.json
   def index
@@ -11,6 +9,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @comments = @post.comments.all
   end
 
   # GET /posts/new
@@ -69,4 +68,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :post, :user_id)
     end
+
 end

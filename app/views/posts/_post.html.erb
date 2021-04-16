@@ -1,4 +1,6 @@
-<div class="post container">
+
+
+<div class="post container" data-id = "<%= post.id %>">
     <div>
         <div class ="profile-image">
             <img src="" alt="">
@@ -6,7 +8,7 @@
     </div>
     <div>
         <div class="post-details">
-            <p class="username"><%= User.find(post.user_id).email%></p> 
+            <p class="username"><%= post.username %></p> 
             <p><%= post.created_at %></p>
         </div>
         <div class="post-content">
@@ -17,14 +19,18 @@
                 <%= link_to new_post_comment_path(post_id: post.id), remote: true do %>
                     <i class="fa fa-comments" aria-hidden="true"></i>
                 <% end %>
+                <% if post.comments_count.positive?%>
+                    <p><%= post.comments_count%></p>
+                <% end %>
                 
-                <p>1</p>
             </div>
             <div class="engagement">
                 <i class="fa fa-thumbs-up"></i>
                 <p>1</p>
             </div>
         </div>
-    </div>
+    </div>   
 </div>
+
+
 
