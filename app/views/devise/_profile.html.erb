@@ -3,11 +3,17 @@
         <div class="profile-image">
             <img src="" alt="" srcset="">
         </div>
-        <p class="username"><%= current_user.email%></p>
+        <% if user_signed_in? %>
+            <p class="username"><%= current_user.email%></p>
+        <% end %>
+        
     </div>
     <div class="user-stats">
         <p>Posts</p>
-        <p><%= current_user.posts.count%></p>
+        <% if user_signed_in? %>
+             <p><%= current_user.posts.count%></p>
+        <% end %>
+       
     </div>
     <div class="btn-container">
         <div class="edit-profile">

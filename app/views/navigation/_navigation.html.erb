@@ -1,12 +1,18 @@
 <nav class="container nav-container">
     <div class="navigation">
         <div class="home">
-            <%= link_to "Home", authenticated_root_path %>
+            <%= link_to "Home", posts_path %>
         </div>
 
         <div class="nav-links">
             <%= link_to "Profile", "#" %>
-            <%= link_to "Log out", destroy_user_session_path %>
+
+            <% if user_signed_in?%>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+                <% else %>
+                <%= link_to "Log in", new_user_session_path, class: "btn"%>
+            <% end %>
+            
         </div>
     </div>
 </nav>

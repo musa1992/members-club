@@ -8,10 +8,12 @@
         </div>
     </div>
     <div>
+        <% if user_signed_in? %>
         <div class="post-details">
             <p class="username"><%= presenter.username %></p> 
             <p><%= presenter.date_posted %></p>
         </div>
+        <% end %>
         <div class="post-content">
             <p><%= post.post%></p>
         </div>

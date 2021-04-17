@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy]
+  before_action :authenticate_user!, only: %i[create]
   
   # GET /posts or /posts.json
   def index
