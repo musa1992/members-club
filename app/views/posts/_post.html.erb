@@ -1,6 +1,7 @@
 
 
-<div class="post container" data-id = "<%= post.id %>">
+<div class="post container" data-id = "<%= post.id %>" data-controller = "<%= controller.action_name %>">
+    
     <% presenter = PostPresenter.new(post)%>
     <div>
         <div class ="profile-image">
