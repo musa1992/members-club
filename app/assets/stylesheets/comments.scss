@@ -36,7 +36,7 @@
             border-radius: 50%;
             &:hover{
                 color: wheat;
-                background-color: bisque;
+                background-color: aquamarine;
             }
         }
        
@@ -57,7 +57,7 @@
     .commenter {
         display: flex;
     }
-    .actions {
-        float: right;
+    .action {
+       float: right;
     }
 }

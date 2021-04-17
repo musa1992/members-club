@@ -6,13 +6,25 @@
 
 .home-page {
     display: flex;
+    margin-top: 50px;
+}
+
+#posts {
+    width: 50%;
+    margin-left: 300px;
+    border-right: 0.5px solid lightgray;
+    border-left:  0.5px solid lightgray;
+}
+#home-pg-profile-section {
+    height: 100vh;
+    position: fixed;
 }
 .post {
     display: flex;
     border-bottom: 0.5px solid lightgray;
     cursor: pointer;
     &:hover {
-        background-color:lightgray;
+        background-color:rgb(247, 245, 245);
     }
 }
 
@@ -42,15 +54,121 @@
 .engagement {
     display: inherit;
     margin-right: 3rem;
+    width: 20%;
     p {
         margin-left: 1rem;
+        align-self: center;
     }
 
     i {
         font-size: 1rem;
+        padding: .3em;
+        border-radius: 50%;
     }
+}
+
+.engage-comment:hover {
+    p {
+        color: rgb(0, 183, 255);
+    }
+    i {
+        background-color:rgb(0, 183, 255);
+    }
+    a {
+        color: whitesmoke;
+    }
+}
+
+.like-post:hover {
+    p {
+        color: rgb(240, 82, 82);
+    }
+    i {
+        background-color: rgb(252, 134, 134);
+        color: whitesmoke;
+    }
+    
 }
 
 .post-content {
     margin: 0.6rem 0;
+}
+
+/* create post */
+.create-post {
+    max-width: 700px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    border-bottom: 0.5px solid grey;
+    h2 {
+        align-self: center;
+    }
+    .draft {
+        display: inherit;
+        padding: 0.5rem 1.5rem;
+        border-radius: 25px;
+        cursor: pointer;
+        &:hover {
+            background-color: grey;
+        }
+        & :first-child {
+            text-transform: uppercase;
+            margin-right: 0.4rem;
+            font-weight: bold;
+        }
+        & :last-child {
+            display: inline-block;
+            padding: 0.2rem;
+            background-color: grey;
+            color: white;
+            border-radius: 3px;
+        }
+    }
+   
+}
+
+.form-area {
+    background-color: azure;
+    margin-top: 1rem;
+    .textarea {
+        border: 0.5px solid black;
+        border-radius: 8px;
+    }
+    .settings {
+        display: flex;
+        padding: 0.5rem 0;
+        background-color: lightslategrey;
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+        
+        & > * {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            &:hover{
+                background-color: black;
+            }
+        }
+    }
+
+    textarea {
+        width: 100%;
+        min-height: 30vh;
+        padding: 1em;
+    }
+}
+
+/** show page **/
+
+.post-show-page {
+    margin-top: 50px;
 }

@@ -1,6 +1,7 @@
 
 
 <div class="post container" data-id = "<%= post.id %>">
+    <% presenter = PostPresenter.new(post)%>
     <div>
         <div class ="profile-image">
             <img src="" alt="">
@@ -8,14 +9,14 @@
     </div>
     <div>
         <div class="post-details">
-            <p class="username"><%= post.username %></p> 
-            <p><%= post.created_at %></p>
+            <p class="username"><%= presenter.username %></p> 
+            <p><%= presenter.date_posted %></p>
         </div>
         <div class="post-content">
             <p><%= post.post%></p>
         </div>
         <div class="post-engagements">
-            <div class="engagement">
+            <div class="engagement engage-comment">
                 <%= link_to new_post_comment_path(post_id: post.id), remote: true do %>
                     <i class="fa fa-comments" aria-hidden="true"></i>
                 <% end %>
@@ -24,7 +25,7 @@
                 <% end %>
                 
             </div>
-            <div class="engagement">
+            <div class="engagement like-post">
                 <i class="fa fa-thumbs-up"></i>
                 <p>1</p>
             </div>

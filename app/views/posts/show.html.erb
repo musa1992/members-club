@@ -1,4 +1,8 @@
-<%= render "post",  post: @post %>
-<div class="comment-section container">
-  <%= render partial: "comment", collection: @comments%>
+<div class="post-show-page">
+  <div class="show-pg-post">
+    <%= render "post",  post: @post %>
+  </div>
+  <div class="comment-section container">
+    <%= render partial: "comment", collection: @comments%>
+  </div>
 </div>

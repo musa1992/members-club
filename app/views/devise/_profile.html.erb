@@ -7,7 +7,7 @@
     </div>
     <div class="user-stats">
         <p>Posts</p>
-        <p><%= current_user.posts.count%> move logic to back</p>
+        <p><%= current_user.posts.count%></p>
     </div>
     <div class="btn-container">
         <div class="edit-profile">
@@ -16,7 +16,7 @@
             <button>Profile</button>
         </div>
         <%= link_to new_post_path do %>
-             <button class="btn-post">Create Post</button>
+             <button class="btn">Create Post</button>
         <% end %>
        
     </div>

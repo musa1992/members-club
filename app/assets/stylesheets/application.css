@@ -25,6 +25,15 @@
      margin: 0;
  }
 
+ a {
+     text-decoration: none;
+ }
+
+ a:hover{
+     background: none;
+     color: black;
+ }
+
  .container {
     padding: 1rem;
  }
@@ -32,8 +41,31 @@
  .username {
      font-weight: bold;
  }
+ .nav-container {
+    background-color: white;
+    border-bottom: 0.5px solid lightgray;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+ }
 
  .navigation {
      display: flex;
      justify-content: space-between;
+    
  }
+
+ .nav-links a {
+    margin-right: 1rem;
+ }
+
+ .btn {
+    padding: 0.7em 1em;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    background-color: aquamarine;
+    cursor: pointer;
+}
