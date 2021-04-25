@@ -7,7 +7,8 @@ document.addEventListener('turbolinks:load', ()=> {
             posts[i].addEventListener('click', function(e) {
                 var postId = this.dataset.id
                 var fullUrl = showPostUrl + postId
-                if (e.target && e.target.className != "fa fa-comments") {
+                console.log(e.target.className)
+                if (e.target && e.target.className == "post container"){
                     if (this.dataset.controller == "index"){
                         window.location.href = fullUrl; 
                     }

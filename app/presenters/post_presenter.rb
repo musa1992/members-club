@@ -11,6 +11,8 @@ class PostPresenter
         @post.created_at
     end
 
-    
+    def comments_count
+        @post.comments.size if @post.comments.size.positive?
+    end
 
 end

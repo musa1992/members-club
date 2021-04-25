@@ -23,15 +23,28 @@
                 <%= link_to new_post_comment_path(post_id: post.id), remote: true do %>
                     <i class="fa fa-comments" aria-hidden="true"></i>
                 <% end %>
-                <% if post.comments_count.positive?%>
-                    <p><%= post.comments_count%></p>
-                <% end %>
+                <p><%= presenter.comments_count %></p>
+                
                 
             </div>
             <div class="engagement like-post">
                 <i class="fa fa-thumbs-up"></i>
                 <p>1</p>
             </div>
+            <% if user_signed_in? %>
+                <% if post.user_id == current_user.id%>
+                    <div class="engagement edit-post">
+                        <%= link_to edit_post_path(id: post.id), local: true do%>
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        <% end %>
+                    </div>
+                    <div class="engagement delete-post">
+                        <%= link_to post_path(post), data: {:confirm => 'Delete this post? '}, :method => :delete do %>
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        <% end %>
+                    </div>    
+                <% end %>
+            <% end %>
         </div>
     </div>   
 </div>
